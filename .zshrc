@@ -106,3 +106,24 @@ function mkcd() {
 
 # Aliases
 alias typora="open -a typora"
+
+## SETTING JAVA VERSION BELOW
+# To change the version, run the command below
+#     /usr/libexec/java_home -V
+#
+#     Select the version to make active and replace the value of ACTIVE_JAVA_VERSION to the desired version
+#
+
+export ACTIVE_JAVA_VERSION="1.8.0_301"
+#export ACTIVE_JAVA_VERSION="12.0.2"
+
+export JAVA_HOME=`/usr/libexec/java_home -v $ACTIVE_JAVA_VERSION`
+
+## Setting TOMCAT_OPTS for Coludinary Sample App
+export CLOUDINARY_URL=cloudinary://822452477576157:MVQxm07k5SaCN7B1aVw_uVTMvR0@jhamela
+
+## Display the Java Version on RPROMPT
+export RPROMPT=`echo ☕ $ACTIVE_JAVA_VERSION | cut -f 1,2 -d "." `
+
+## Putting Python3 in path before python2
+export PATH=/usr/local/bin/python:$PATH
