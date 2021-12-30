@@ -24,3 +24,4 @@ ANSI_WHITE='\033[1;37m'
 NC='\033[0m'
 
 ## Use Example: printf "I ${RED}love${NC} ANSI Colors\n"
+
