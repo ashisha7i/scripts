@@ -40,3 +40,22 @@ function gpvpn() {
         launchctl unload /Library/LaunchAgents/com.paloaltonetworks.gp.pangp*
     fi
 }
+
+# Custom function to set iTerm window/Tab title
+function settitle() {
+    echo -e "\033];$1\007"
+}
+
+# Custom function to convert EPOCH milliseconds to Date Time
+function epochmilli() {
+    echo
+    echo "\t`date -r $(($1/1000))`"
+    echo
+}
+
+# Custom function to convert EPOCH seconds to readable Date Time
+function epochsec() {
+    echo
+    echo "\t`date -r $1`"
+    echo
+}
