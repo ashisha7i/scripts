@@ -25,3 +25,18 @@ NC='\033[0m'
 
 ## Use Example: printf "I ${RED}love${NC} ANSI Colors\n"
 
+# Utility function to reload the modified .zshrc
+function reload() {
+    source ~/.zshrc
+}
+
+# Custom function to load/unload GPVPN client (Requires GPVPN client installed)
+function gpvpn() {
+    if [ "$#" -ne 1 ]; then
+        echo -e "\n ${ANSI_BLUE}Usage:${NC} ${ANSI_GREEN}gpvpn${NC} ${ANSI_YELLOW}on${NC}|${ANSI_YELLOW}off${NC}\n"
+    elif [ "$1" = "on" ]; then
+        launchctl load /Library/LaunchAgents/com.paloaltonetworks.gp.pangp*
+    elif [ "$1" = "off" ]; then
+        launchctl unload /Library/LaunchAgents/com.paloaltonetworks.gp.pangp*
+    fi
+}
